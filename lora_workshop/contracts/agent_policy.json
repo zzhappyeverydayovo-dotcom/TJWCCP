@@ -1,0 +1,30 @@
+{
+  "schema_version": "heritage-agent-policy-v1",
+  "agent_name": "heritage-creative-lora-agent",
+  "write_allowlist": [
+    "train.learning_rate",
+    "train.rank",
+    "train.alpha",
+    "train.steps",
+    "train.caption_dropout",
+    "train.scheduler",
+    "generation.lora_weight_default"
+  ],
+  "protected_fields": [
+    "dataset.required_authorization",
+    "dataset.trigger_token",
+    "evaluation.weights",
+    "service_constraints",
+    "base_model.id"
+  ],
+  "resource_limits": {
+    "max_steps_per_trial": 5000,
+    "max_trials_per_run": 50,
+    "max_artifact_gb_per_trial": 10
+  },
+  "governance_notes": [
+    "Agent 只允许调整训练超参数和 LoRA 默认权重，不允许替换授权数据、触发词、评估权重和安全约束。",
+    "真实训练任务必须记录数据授权状态、训练配置锁定文件、模型版本、评估结论和审核记录。",
+    "用于公开展示或商业应用的 LoRA 输出必须经过内容审核辅助智能体与人工复核。"
+  ]
+}

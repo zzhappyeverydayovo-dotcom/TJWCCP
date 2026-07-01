@@ -1,0 +1,19 @@
+{
+  "schema_version": "heritage-lora-search-v1",
+  "recommended_first_step": {
+    "learning_rate": 0.0001,
+    "rank": 16,
+    "alpha": 16,
+    "steps": 1200,
+    "caption_dropout": 0.05,
+    "scheduler": "constant"
+  },
+  "space": {
+    "learning_rate": [0.00006, 0.00008, 0.0001, 0.00012, 0.00016],
+    "rank": [8, 16, 32],
+    "alpha": [8, 16, 32],
+    "steps": [800, 1200, 1600, 2000, 2600],
+    "caption_dropout": [0.0, 0.03, 0.05, 0.08],
+    "scheduler": ["constant", "cosine"]
+  }
+}

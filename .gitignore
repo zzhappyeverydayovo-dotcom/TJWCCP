@@ -1,0 +1,10 @@
+.venv/
+frontend/node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+db.sqlite3
+~$*
+.~*
+lora_workshop/runs/*
+!lora_workshop/runs/.gitkeep

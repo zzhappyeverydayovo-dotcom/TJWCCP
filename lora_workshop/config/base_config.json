@@ -1,0 +1,86 @@
+{
+  "schema_version": "heritage-lora-config-v1",
+  "project": "tianjin_heritage_creative_lora",
+  "project_cn": "天津地域文化文创产品智能生成 LoRA 工具链",
+  "positioning": "自研微调模型+自研工具+开源底座",
+  "primary_scene": "泥人张彩塑文创产品生成",
+  "base_model": {
+    "id": "black-forest-labs/FLUX.1-dev",
+    "fallback_id": "stabilityai/stable-diffusion-xl-base-1.0",
+    "role": "天津地域文化文创专属图像生成大模型底座",
+    "notes": "实际训练时可替换为已授权、可商用或内网部署的开源文生图底座。"
+  },
+  "dataset": {
+    "core_ref": "niren_zhang_authorized_core@v1",
+    "core_description": "天津泥人张彩塑授权高清作品原始数据，目标规模约1300张。",
+    "expanded_ref": "chinese_traditional_culture_expanded@v1",
+    "expanded_description": "中国传统雕塑、美术、纹饰、民俗符号与文化概念扩充数据，目标规模约6000张。",
+    "local_root": "datasets/niren_zhang/v1",
+    "image_glob": "images/*.{jpg,jpeg,png,webp}",
+    "caption_ext": ".txt",
+    "resolution": 1024,
+    "trigger_token": "nrz_clay_heritage_style",
+    "required_authorization": true,
+    "annotation_standard": "结构化+美学化双维度标注",
+    "annotation_dimensions": [
+      "主体特征",
+      "造型手法",
+      "色彩体系",
+      "材质质感",
+      "人物姿态",
+      "服饰属性",
+      "艺术风格",
+      "文化语义",
+      "审美特征",
+      "适用产品品类"
+    ]
+  },
+  "train": {
+    "backend": "ai-toolkit-dry-run",
+    "learning_rate": 0.0001,
+    "rank": 16,
+    "alpha": 16,
+    "steps": 1200,
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "caption_dropout": 0.05,
+    "optimizer": "adamw8bit",
+    "scheduler": "constant",
+    "precision": "bf16",
+    "seed": 20260701
+  },
+  "generation": {
+    "width": 1024,
+    "height": 1024,
+    "sample_steps": 28,
+    "guidance_scale": 6.5,
+    "lora_weight_default": 0.75,
+    "negative_prompt": "low quality, blurry, watermark, copied logo, real brand logo, celebrity likeness, inaccurate heritage symbol, distorted clay texture, extra fingers, broken product structure, unsafe or sensitive content"
+  },
+  "evaluation": {
+    "prompt_matrix_version": "niren-zhang-cultural-creative-v1",
+    "prompts": [
+      "nrz_clay_heritage_style, Tianjin painted clay figurine inspired cultural creative product, gift box mockup, handmade clay texture, traditional color palette, premium souvenir design",
+      "nrz_clay_heritage_style, eastern character figurine design, rounded clay volume, vivid folk expression, cultural exhibition product render",
+      "nrz_clay_heritage_style, Tianjin regional culture poster, painted clay figurine visual language, clean composition, product launch key visual",
+      "nrz_clay_heritage_style, cultural creative fridge magnet set, traditional costume details, handcrafted clay surface, white studio background"
+    ],
+    "weights": {
+      "style_fidelity": 0.25,
+      "cultural_accuracy": 0.25,
+      "product_transferability": 0.2,
+      "prompt_adherence": 0.15,
+      "artifact_control": 0.1,
+      "cost_efficiency": 0.05
+    }
+  },
+  "service_constraints": {
+    "availability_target": "99.5%",
+    "standard_image_latency_target_seconds": 15,
+    "max_parallel_generation_tasks": 100,
+    "agent_context_min_tokens": 8192,
+    "core_model_context_min_tokens": 4096,
+    "audit_log_retention_days": 365,
+    "security_level_target": "等保2.0二级及以上"
+  }
+}

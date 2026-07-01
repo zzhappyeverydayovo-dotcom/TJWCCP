@@ -1,0 +1,43 @@
+{
+  "schema_version": "heritage-evaluation-policy-v1",
+  "tracks": {
+    "style_fidelity": {
+      "weight": 0.25,
+      "description": "泥人张彩塑造型语言、三分塑七分彩、手工泥塑质感和传统设色还原度。"
+    },
+    "cultural_accuracy": {
+      "weight": 0.25,
+      "description": "天津地域文化、非遗符号、人物服饰与文化语义表达准确性。"
+    },
+    "product_transferability": {
+      "weight": 0.2,
+      "description": "生成结果转化为礼盒、海报、包装、冰箱贴、文具、纪念品等文创产品的适配性。"
+    },
+    "prompt_adherence": {
+      "weight": 0.15,
+      "description": "对结构化提示词、产品品类、目标人群和使用场景的遵循程度。"
+    },
+    "artifact_control": {
+      "weight": 0.1,
+      "description": "画面瑕疵、文字伪影、变形、侵权符号、错误材质等问题控制。"
+    },
+    "cost_efficiency": {
+      "weight": 0.05,
+      "description": "训练步数、rank、生成耗时与算力占用的综合效率。"
+    }
+  },
+  "hard_gates": {
+    "authorized_dataset_required": true,
+    "checkpoint_must_exist": true,
+    "cultural_accuracy_min": 0.72,
+    "artifact_control_min": 0.7,
+    "copyright_risk_max": "medium",
+    "requires_human_review_for_release": true
+  },
+  "release_decisions": [
+    "reject",
+    "needs_revision",
+    "internal_preview",
+    "approved_for_platform"
+  ]
+}
