@@ -51,6 +51,34 @@ sample_grid.html
 summary.md
 ```
 
+## 人工评审网站
+
+构建静态评审网站数据：
+
+```bash
+python3 lora_workshop/tools/build_review_site.py --run-dir lora_workshop/runs/smoke_niren_zhang
+```
+
+本地打开：
+
+```bash
+python3 -m http.server 8000 -d lora_workshop/review_site
+```
+
+浏览器访问：
+
+```text
+http://127.0.0.1:8000/
+```
+
+评审台能力：
+
+- 按 LoRA 名称、主题、trial id 搜索。
+- 按发布状态筛选：内部预览、需要修订、可纳管、淘汰。
+- 查看每个 trial 的训练参数、评估分轨、触发词、适用品类和样张。
+- 手动设为 `Champion`、加入候选、保留观察或人工淘汰。
+- 填写人工意见并导出 `human_review.json`，用于模型纳管和后续版本迭代。
+
 ## 真实训练接入点
 
 当前默认 backend 是 `ai-toolkit-dry-run`，只渲染 AI Toolkit YAML，不启动训练。真实训练时应补充：

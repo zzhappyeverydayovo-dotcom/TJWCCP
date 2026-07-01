@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天津非遗 LoRA 人工评审台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">TJWCCP · LoRA Review</p>
+      <h1>天津非遗文创 LoRA 人工评审台</h1>
+      <p id="runMeta">加载训练批次中...</p>
+    </div>
+    <div class="actions">
+      <button id="exportReview">导出评审结果</button>
+      <button id="resetReview" class="ghost">清空本地选择</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="summary-grid">
+      <article>
+        <span>训练批次</span>
+        <strong id="runId">-</strong>
+      </article>
+      <article>
+        <span>候选数量</span>
+        <strong id="trialCount">-</strong>
+      </article>
+      <article>
+        <span>当前 Champion</span>
+        <strong id="championName">未选择</strong>
+      </article>
+      <article>
+        <span>指标最佳</span>
+        <strong id="metricBest">-</strong>
+      </article>
+    </section>
+
+    <section class="toolbar">
+      <input id="searchInput" placeholder="搜索 LoRA 名称、主题、trial id">
+      <select id="decisionFilter">
+        <option value="">全部发布状态</option>
+        <option value="internal_preview">内部预览</option>
+        <option value="needs_revision">需要修订</option>
+        <option value="approved_for_platform">可纳管</option>
+        <option value="reject">淘汰</option>
+      </select>
+      <select id="manualFilter">
+        <option value="">全部人工结论</option>
+        <option value="champion">Champion</option>
+        <option value="shortlist">候选</option>
+        <option value="hold">保留观察</option>
+        <option value="reject">人工淘汰</option>
+      </select>
+    </section>
+
+    <section class="rubric">
+      <h2>人工评审重点</h2>
+      <ol id="rubricList"></ol>
+    </section>
+
+    <section id="trialGrid" class="trial-grid"></section>
+  </main>
+
+  <template id="trialCardTemplate">
+    <article class="trial-card">
+      <div class="card-head">
+        <div>
+          <span class="trial-id"></span>
+          <h2></h2>
+          <p class="theme"></p>
+        </div>
+        <strong class="score"></strong>
+      </div>
+      <div class="badges"></div>
+      <dl class="params"></dl>
+      <div class="tracks"></div>
+      <label class="review-note">
+        人工意见
+        <textarea rows="3" placeholder="记录文化准确性、产品转化、瑕疵风险和是否建议纳管。"></textarea>
+      </label>
+      <div class="card-actions">
+        <button data-action="champion">设为 Champion</button>
+        <button data-action="shortlist" class="secondary">加入候选</button>
+        <button data-action="hold" class="secondary">保留观察</button>
+        <button data-action="reject" class="danger">人工淘汰</button>
+        <a class="sample-link" target="_blank" rel="noreferrer">查看样张</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

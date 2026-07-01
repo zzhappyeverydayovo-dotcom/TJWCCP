@@ -13,6 +13,8 @@
 
 ```bash
 python3 lora_workshop/runner.py --trials 3 --run-name smoke_niren_zhang
+python3 lora_workshop/tools/build_review_site.py --run-dir lora_workshop/runs/smoke_niren_zhang
+python3 -m http.server 8000 -d lora_workshop/review_site
 ```
 
 查看结果：
@@ -20,4 +22,7 @@ python3 lora_workshop/runner.py --trials 3 --run-name smoke_niren_zhang
 ```text
 lora_workshop/runs/smoke_niren_zhang/experiments.tsv
 lora_workshop/runs/smoke_niren_zhang/best.json
+lora_workshop/review_site/index.html
 ```
+
+人工评审台支持按 LoRA、主题、分数和发布状态筛选 trial，手动设定 Champion、加入候选、保留观察或人工淘汰，并导出人工评审 JSON。

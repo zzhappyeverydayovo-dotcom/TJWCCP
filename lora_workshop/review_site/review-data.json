@@ -1,0 +1,278 @@
+{
+  "schema_version": "heritage-review-site-v1",
+  "generated_at": "2026-07-01T00:45:18",
+  "run_id": "smoke_niren_zhang",
+  "project": "天津地域文化文创产品智能生成应用系统",
+  "review_goal": "人工筛选 LoRA 训练结果，确认可进入模型纳管、复训或发布审核的候选版本。",
+  "best_by_metric": {
+    "trial_id": "trial_000_baseline",
+    "score": 0.7748,
+    "artifact_dir": "/Users/lobster/Documents/非遗/lora_workshop/runs/smoke_niren_zhang/trial_000_baseline",
+    "release_decision": "internal_preview"
+  },
+  "trials": [
+    {
+      "trial_id": "trial_000_baseline",
+      "lora_id": "LORA-001",
+      "lora_name": "泥人张彩塑基础风格",
+      "theme": "泥人张彩塑",
+      "status": "not_trained",
+      "score": 0.7748,
+      "release_decision": "internal_preview",
+      "reject_reason": "checkpoint_missing;human_review_required",
+      "sample_url": "assets/trial_000_baseline_sample_grid.html",
+      "config": {
+        "base_model": "black-forest-labs/FLUX.1-dev",
+        "dataset_ref": "niren_zhang_authorized_core@v1",
+        "learning_rate": "0.0001",
+        "rank": "16",
+        "alpha": "16",
+        "steps": "1200",
+        "trigger_token": "nrz_clay_heritage_style",
+        "default_weight": 0.75,
+        "product_fit": [
+          "文创礼盒",
+          "海报",
+          "冰箱贴",
+          "产品样机"
+        ]
+      },
+      "evaluation": {
+        "schema_version": "heritage-evaluation-v1",
+        "trial_id": "trial_000_baseline",
+        "lora_profile": {
+          "id": "LORA-001",
+          "name": "泥人张彩塑基础风格",
+          "category": "核心示范",
+          "theme": "泥人张彩塑",
+          "trigger": "nrz_clay_heritage_style",
+          "default_weight": 0.75,
+          "product_fit": [
+            "文创礼盒",
+            "海报",
+            "冰箱贴",
+            "产品样机"
+          ]
+        },
+        "score": 0.7748,
+        "tracks": {
+          "style_fidelity": 0.9,
+          "cultural_accuracy": 0.7369,
+          "product_transferability": 0.6454,
+          "prompt_adherence": 0.78,
+          "artifact_control": 0.86,
+          "cost_efficiency": 0.6692,
+          "simulated": true
+        },
+        "release_gate": {
+          "decision": "internal_preview",
+          "eligible_for_public_release": false,
+          "reject_reason": "checkpoint_missing;human_review_required",
+          "notes": "Dry-run 分数用于配置筛选；真实模型发布必须替换为图像指标、人工盲评、版权肖像与文化表达复核。"
+        }
+      },
+      "config_lock": {
+        "rendered_native_config_path": "/Users/lobster/Documents/非遗/lora_workshop/runs/smoke_niren_zhang/trial_000_baseline/trainer_config/ai_toolkit_config.yaml",
+        "dry_run": true
+      }
+    },
+    {
+      "trial_id": "trial_001_matrix_proposal",
+      "lora_id": "LORA-001",
+      "lora_name": "泥人张彩塑基础风格",
+      "theme": "泥人张彩塑",
+      "status": "not_trained",
+      "score": 0.7748,
+      "release_decision": "internal_preview",
+      "reject_reason": "checkpoint_missing;human_review_required",
+      "sample_url": "assets/trial_001_matrix_proposal_sample_grid.html",
+      "config": {
+        "base_model": "black-forest-labs/FLUX.1-dev",
+        "dataset_ref": "niren_zhang_authorized_core@v1",
+        "learning_rate": "0.0001",
+        "rank": "16",
+        "alpha": "16",
+        "steps": "1200",
+        "trigger_token": "nrz_clay_heritage_style",
+        "default_weight": 0.75,
+        "product_fit": [
+          "文创礼盒",
+          "海报",
+          "冰箱贴",
+          "产品样机"
+        ]
+      },
+      "evaluation": {
+        "schema_version": "heritage-evaluation-v1",
+        "trial_id": "trial_001_matrix_proposal",
+        "lora_profile": {
+          "id": "LORA-001",
+          "name": "泥人张彩塑基础风格",
+          "category": "核心示范",
+          "theme": "泥人张彩塑",
+          "trigger": "nrz_clay_heritage_style",
+          "default_weight": 0.75,
+          "product_fit": [
+            "文创礼盒",
+            "海报",
+            "冰箱贴",
+            "产品样机"
+          ]
+        },
+        "score": 0.7748,
+        "tracks": {
+          "style_fidelity": 0.9,
+          "cultural_accuracy": 0.7369,
+          "product_transferability": 0.6454,
+          "prompt_adherence": 0.78,
+          "artifact_control": 0.86,
+          "cost_efficiency": 0.6692,
+          "simulated": true
+        },
+        "release_gate": {
+          "decision": "internal_preview",
+          "eligible_for_public_release": false,
+          "reject_reason": "checkpoint_missing;human_review_required",
+          "notes": "Dry-run 分数用于配置筛选；真实模型发布必须替换为图像指标、人工盲评、版权肖像与文化表达复核。"
+        }
+      },
+      "config_lock": {
+        "rendered_native_config_path": "/Users/lobster/Documents/非遗/lora_workshop/runs/smoke_niren_zhang/trial_001_matrix_proposal/trainer_config/ai_toolkit_config.yaml",
+        "dry_run": true
+      }
+    },
+    {
+      "trial_id": "trial_002_matrix_proposal",
+      "lora_id": "LORA-002",
+      "lora_name": "泥人张东方人物",
+      "theme": "东方人物特征",
+      "status": "not_trained",
+      "score": 0.6824,
+      "release_decision": "needs_revision",
+      "reject_reason": "checkpoint_missing;cultural_accuracy_below_gate;human_review_required",
+      "sample_url": "assets/trial_002_matrix_proposal_sample_grid.html",
+      "config": {
+        "base_model": "black-forest-labs/FLUX.1-dev",
+        "dataset_ref": "niren_zhang_authorized_core@v1",
+        "learning_rate": "0.00016",
+        "rank": "8",
+        "alpha": "16",
+        "steps": "2000",
+        "trigger_token": "nrz_clay_heritage_style",
+        "default_weight": 0.72,
+        "product_fit": [
+          "IP角色",
+          "摆件",
+          "插画"
+        ]
+      },
+      "evaluation": {
+        "schema_version": "heritage-evaluation-v1",
+        "trial_id": "trial_002_matrix_proposal",
+        "lora_profile": {
+          "id": "LORA-002",
+          "name": "泥人张东方人物",
+          "category": "人物形象",
+          "theme": "东方人物特征",
+          "trigger": "nrz_eastern_figure",
+          "default_weight": 0.72,
+          "product_fit": [
+            "IP角色",
+            "摆件",
+            "插画"
+          ]
+        },
+        "score": 0.6824,
+        "tracks": {
+          "style_fidelity": 0.779,
+          "cultural_accuracy": 0.6465,
+          "product_transferability": 0.5954,
+          "prompt_adherence": 0.6444,
+          "artifact_control": 0.82,
+          "cost_efficiency": 0.5654,
+          "simulated": true
+        },
+        "release_gate": {
+          "decision": "needs_revision",
+          "eligible_for_public_release": false,
+          "reject_reason": "checkpoint_missing;cultural_accuracy_below_gate;human_review_required",
+          "notes": "Dry-run 分数用于配置筛选；真实模型发布必须替换为图像指标、人工盲评、版权肖像与文化表达复核。"
+        }
+      },
+      "config_lock": {
+        "rendered_native_config_path": "/Users/lobster/Documents/非遗/lora_workshop/runs/smoke_niren_zhang/trial_002_matrix_proposal/trainer_config/ai_toolkit_config.yaml",
+        "dry_run": true
+      }
+    },
+    {
+      "trial_id": "trial_003_matrix_proposal",
+      "lora_id": "LORA-003",
+      "lora_name": "泥人张民俗表情",
+      "theme": "民俗表情与五官",
+      "status": "not_trained",
+      "score": 0.667,
+      "release_decision": "needs_revision",
+      "reject_reason": "checkpoint_missing;cultural_accuracy_below_gate;human_review_required",
+      "sample_url": "assets/trial_003_matrix_proposal_sample_grid.html",
+      "config": {
+        "base_model": "black-forest-labs/FLUX.1-dev",
+        "dataset_ref": "niren_zhang_authorized_core@v1",
+        "learning_rate": "0.00016",
+        "rank": "8",
+        "alpha": "32",
+        "steps": "2600",
+        "trigger_token": "nrz_clay_heritage_style",
+        "default_weight": 0.7,
+        "product_fit": [
+          "角色头像",
+          "贴纸",
+          "徽章"
+        ]
+      },
+      "evaluation": {
+        "schema_version": "heritage-evaluation-v1",
+        "trial_id": "trial_003_matrix_proposal",
+        "lora_profile": {
+          "id": "LORA-003",
+          "name": "泥人张民俗表情",
+          "category": "造型语言",
+          "theme": "民俗表情与五官",
+          "trigger": "nrz_folk_expression",
+          "default_weight": 0.7,
+          "product_fit": [
+            "角色头像",
+            "贴纸",
+            "徽章"
+          ]
+        },
+        "score": 0.667,
+        "tracks": {
+          "style_fidelity": 0.779,
+          "cultural_accuracy": 0.6365,
+          "product_transferability": 0.5393,
+          "prompt_adherence": 0.6719,
+          "artifact_control": 0.82,
+          "cost_efficiency": 0.45,
+          "simulated": true
+        },
+        "release_gate": {
+          "decision": "needs_revision",
+          "eligible_for_public_release": false,
+          "reject_reason": "checkpoint_missing;cultural_accuracy_below_gate;human_review_required",
+          "notes": "Dry-run 分数用于配置筛选；真实模型发布必须替换为图像指标、人工盲评、版权肖像与文化表达复核。"
+        }
+      },
+      "config_lock": {
+        "rendered_native_config_path": "/Users/lobster/Documents/非遗/lora_workshop/runs/smoke_niren_zhang/trial_003_matrix_proposal/trainer_config/ai_toolkit_config.yaml",
+        "dry_run": true
+      }
+    }
+  ],
+  "review_rubric": [
+    "泥人张彩塑造型语言、三分塑七分彩、手工泥塑质感是否稳定。",
+    "天津地域文化、非遗符号和传统设色是否准确，是否存在文化误读。",
+    "是否适合转化为礼盒、海报、包装、冰箱贴、文具、纪念品等文创产品。",
+    "是否有商标、肖像、敏感内容、伪文字、水印、结构崩坏等风险。",
+    "同等质量下优先选择训练成本更低、可控性更强、提示词遵循更好的版本。"
+  ]
+}
